@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+    <script>
+        /*
+        Завдання:
+        Реалізуйте сценарій, який під час натискання на клавіші 1, 2 або 3 на клавіатурі додаватиме рамку
+        червоного кольору на відповідний div. Якщо затиснуто клавіші Ctrl + A, то червона рамка додається відразу
+        для всіх div.
+        */
+
+
+        document.addEventListener("keydown", function(e) {
+            switch (e.key) {
+                case "1": 
+                    addBorder("div1");
+                    break;
+                case "2": 
+                    addBorder("div2");
+                    break;
+                case "3": 
+                    addBorder("div3");                    
+                    break;  
+                case "Control" && "a":
+                    addBorder("div1");  
+                    addBorder("div2");
+                    addBorder("div3");
+                    break
+            }
+        })
+
+        function addBorder(div) {
+            document.querySelector(`#${div}`).style.border = "5px solid red";
+        }
+    </script>
+</body>
+
+</html>
